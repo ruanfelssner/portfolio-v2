@@ -2,8 +2,6 @@
 
 Portfólio desenvolvido em Vue3 com integração em API linguagem en-US e pt-BR
 
-## Customize configuration
-
 ## Project Setup
 
 ```sh

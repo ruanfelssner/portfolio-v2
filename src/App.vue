@@ -6,5 +6,6 @@ import { RouterView } from 'vue-router'
   <div class="min-h-full min-w-full">
     <Header />
     <RouterView />
+    <Footer />
   </div>
 </template>

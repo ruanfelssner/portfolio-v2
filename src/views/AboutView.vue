@@ -1,9 +1,9 @@
 <template>
-  <main class="bg-black py-5 px-4 sm:px-6 lg:px-8">
-    <div class="about max-w-7xl mx-auto">
+  <main class="bg-black py-5 px-4 sm:px-6 lg:px-8 bgHeight">
+    <div class="about max-w-7xl mx-auto pt-20">
       <h1 class="text-center font-kanit font-semi-bold text-4xl">Sobre mim</h1>
       <div class="about-text text-justify">
-        <div class="mt-5">
+        <div class="mt-5 px-8">
           <h2><b>Formação Acadêmica:</b></h2>
           <p class="mb-3">Estudante de Engenharia de Software na PUC PR, com conclusão prevista para 2025.</p>
 

@@ -67,39 +67,39 @@
       </div>
 
       <div class="border-top bg-gradient min-h-1"></div>
-      <div class="habilities bgHeight max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex align-center justify-center">
+      <div class="habilities bgHeight max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex align-center justify-center">
         <div class="block">
-          <h1 class="text-center font-kanit font-semi-bold text-4xl mb-5">Habilidades</h1>
-          <div class="flex flex-wrap list-icons justify-center">
-            <div class="icon flex flex-wrap justify-center py-4" v-for="(item, id) of listIcons" :key="'listIcon' + id">
+          <h1 class="text-center font-kanit font-semi-bold text-4xl mb-12">Habilidades</h1>
+          <div class="grid grid-cols-4 md:grid-cols-8 gap-4 list-icons justify-center">
+            <div
+              class="icon flex flex-wrap justify-center bg-gray-800 pt-4 hover:bg-gray-700"
+              v-for="(item, id) of listIcons"
+              :key="'listIcon' + id"
+            >
               <FontAwesomeIcon
                 :icon="item.prefix ? item.prefix + item.icon : 'fa-brands fa-' + item.icon"
                 class="color-blue-active"
                 :rotation="item.rotation"
               />
-              <span class="w-100 text-center mt-2 font-kanit font-semi-bold">{{ item.name }}</span>
+              <span class="w-100 text-center mt-2 font-kanit font-semi-bold mb-4">{{ item.name }}</span>
+              <div class="border-bottom w-100 bg-gradient min-h-1"></div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="border-top bg-gradient min-h-1"></div>
-      <div
-        class="projects bgHeight max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex align-center justify-center"
-        id="portfolio"
-      >
-        <div class="block py-8">
-          <h1 class="text-center font-kanit font-semi-bold text-4xl mb-5">Projetos</h1>
+      <ProjectPortfolio />
 
-          <div
-            class="flex flex-wrap list-icons justify-center align-center grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
-          >
+      <div class="border-top bg-gradient min-h-1"></div>
+      <div class="experience bgHeight max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex align-center justify-center">
+        <div class="block">
+          <h1 class="text-center font-kanit font-semi-bold text-4xl mb-12">Experiência</h1>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 list-icons justify-center mb-16">
             <div
-              v-for="(item, id) of listProjects"
-              :key="'projetos' + id"
-              v-show="id <= showProjects - 1"
-              class="mb-3 cursor-pointer hover:opacity-80"
-              @click="item.link ? openNewWindow(item.link) : openModal(id)"
+              class="icon flex flex-wrap justify-center align-start bg-gray-800 pt-4 hover:bg-gray-700 cursor-pointer relative"
+              v-for="(item, id) of listExperience"
+              :key="'listIcon' + id"
             >
               <TransitionRoot
                 appear
@@ -111,42 +111,15 @@
                 leave-from="opacity-100 rotate-0 scale-100 "
                 leave-to="opacity-0 scale-95 "
               >
-                <h1 class="w-100 text-center mt-2 mb-3 font-kanit font-semi-bold text-lg color-blue-active">
-                  {{ item.nome }}
-                </h1>
-                <div class="thumb relative">
-                  <img :src="'https://felss.dev/api/img/' + item.img" alt="" class="rounded-md" />
-
-                  <p class="mb-4 flex align-center justify-center absolute inset-x-0 bottom-0">
-                    <span class="mx-auto font-kanit bg-active rounded-md px-2 py-1 text-black shadow">{{
-                      item.descricao
-                    }}</span>
-                  </p>
+                <div class="p-6 grid grid-rows-1 gap-0">
+                  <p class="font-kanit font-semi-bold text-lg">{{ item.ano }}</p>
+                  <h2 class="font-kanit font-semi-bold text-2xl mb-6">{{ item.cargo }} - {{ item.empresa }}</h2>
+                  <p>{{ item.descricao }}</p>
                 </div>
+                <div class="border-bottom w-100 bg-gradient min-h-1 max-h-1 absolute bottom-0"></div>
               </TransitionRoot>
             </div>
           </div>
-          <div class="flex h-10 justify-center align-center">
-            <button
-              @click="showProjects += 3"
-              :disabled="showProjects >= listProjects.length"
-              class="disabled:opacity-50 hover:opacity-80"
-            >
-              <FontAwesomeIcon
-                icon="fa-solid fa-circle-plus"
-                :class="showProjects >= listProjects.length ? 'color-white' : 'color-blue-active'"
-                size="2xl"
-              />
-            </button>
-          </div>
-          <vue-easy-lightbox
-            escDisabled
-            moveDisabled
-            :visible="visible"
-            :imgs="imgs"
-            :index="index"
-            @hide="visible = false"
-          ></vue-easy-lightbox>
         </div>
       </div>
     </main>
@@ -154,9 +127,90 @@
 </template>
 <script setup lang="ts">
 import { TransitionRoot } from '@headlessui/vue'
-import axios from 'axios'
-import { ref, onBeforeMount } from 'vue'
-import VueEasyLightbox from 'vue-easy-lightbox'
+
+const listExperience = [
+  {
+    cargo: 'Engenheiro de Software Sênior',
+    empresa: 'Muvz - Omint Saúde',
+    ano: '2022 - 2024',
+    descricao:
+      'Trabalhei nos projetos da Omint Saúde desenvolvendo o redesign dos aplicativos principais de associados, Kipp Saude, App Prestadores da Omint, Desenvolvimento de Frontend e seus padrões.',
+    posicao: 'right',
+    icon: 'devicon-devicon-plain',
+  },
+  {
+    cargo: 'Tech Lead Sênior',
+    empresa: 'Auzza Capital',
+    ano: '2022 - 2023',
+    descricao:
+      'Atuando na gestão de equipe de tecnologia, desenvolvimento de produto, regras de negócios e programando em Node.js (Backend) + Mysql e Mongodb + Nuxt.js e Next.js',
+    posicao: 'left',
+    icon: 'devicon-devicon-plain',
+  },
+  {
+    cargo: 'Engenheiro de Software Sênior',
+    empresa: 'Franq Open Bank',
+    ano: '2021 - 2022',
+    descricao:
+      'Trabalho focado no desenvolvimento de frontend ux ui dos produtos de Home Equity, Crédito Imobiliario, Consórcio PJ',
+    posicao: 'right',
+    icon: 'devicon-devicon-plain',
+  },
+  {
+    cargo: 'Fullstack Sênior',
+    empresa: 'AMA - Agentes do Meio Ambiente',
+    ano: '2019 - 2021',
+    descricao:
+      'Apoiando a todos os setores no desenvolvimento dos produtos de software, desde o desenvolvimento de ferramentas para o mapeamento de microáreas, infraestrutura devops, requisitos de software e com o foco maior no desenvolvimento web de front e back end.',
+    posicao: 'left',
+    icon: 'devicon-devicon-plain',
+  },
+  {
+    cargo: 'Fullstack Sênior',
+    empresa: 'Agência Candy',
+    ano: '2013 - 2021',
+    descricao:
+      'Trabalhando com a parte Administrativa na gestão e com o desenvolvimento desde as partes gráficas como Photoshop, Illustrator, Premiere vetores logos cartões de visitas etc, como parte de front end, estruturação Bootstrap, UX UI, Wordpress, e parte de Programação em PHP, Ajax, Jquery, em sistemas personalizados aplicações de facebook, wireframes, integrações de sistemas e etc.Google analytics, Google Ads, Face Ads, Google Webmaster entre outras aplicações de divulgação e indexação.',
+    posicao: 'right',
+    icon: 'devicon-devicon-plain',
+  },
+  {
+    cargo: 'Front End Pleno',
+    empresa: 'Grupo Negócios Públicos',
+    ano: '2019',
+    descricao:
+      'Trabalhei no desenvolvimento web de seus produtos como ERP, Sollicita, Contract Vision, Compliance GOV, durante todo o período utilizei Sass, Razor do C#.net, participei de todo desenvolvimento do zero de alguns produtos como o Sollicita, Contract Vision, Compliance Criei alguns layouts e marcas do Contract Vision/Compliance, neste trabalho mesmo que o período pequeno as amizades continuam, equipe super enturmada, criamos um um bom vinculo mesmo após a saída.',
+    posicao: 'left',
+    icon: 'devicon-devicon-plain',
+  },
+  {
+    cargo: 'Fullstack Pleno',
+    empresa: 'Sites 10',
+    ano: '2014-2015',
+    descricao:
+      "Exportação de Layouts em psd's para html/css/js e programação dos mesmos em php/mysql, paineis administrativos e gerenciaveis/ criação de ecommerce/ e etc.",
+    posicao: 'right',
+    icon: 'devicon-devicon-plain',
+  },
+  {
+    cargo: 'Front End Pleno',
+    empresa: 'Magic Web Design',
+    ano: '2013-2014',
+    descricao:
+      'Trabalho de atualizações de sites, portais, sistemas. Front end para sites de novos clientes, PSD, Html, Css, Jquery, clientes de grande porte tais como itau, sadia, yamaha etc.',
+    posicao: 'left',
+    icon: 'devicon-devicon-plain',
+  },
+  // {
+  //   cargo: 'Auxiliar de Recursos Humanos',
+  //   empresa: 'Vaccinar',
+  //   ano: '2011-2013',
+  //   descricao:
+  //     'Como aprendiz trabalhei auxiliando todos os setores de RH, recrutamento e seleção, departamento pessoal e segurança no trabalho.',
+  //   posicao: 'right',
+  //   icon: '',
+  // },
+]
 const listIcons = [
   { name: 'Vue/Nuxt', icon: 'vuejs', rotation: '' },
   { name: 'React/Next', icon: 'react' },
@@ -197,41 +251,6 @@ const listIcons = [
   { name: 'Git', icon: 'git' },
   { name: 'Bitbucket', icon: 'bitbucket' },
 ]
-
-const showProjects = ref(6)
-type Project = {
-  nome: string
-  link: string
-  img: string
-  empresa: string
-  id: string
-  descricao: string
-  data: string
-}
-const listProjects = ref<Project[]>([])
-
-const openNewWindow = (link: string) => {
-  window.open(link, '_blank')
-}
-
-const visible = ref(false)
-const imgs = ref([])
-const index = ref(0)
-const openModal = (id: number) => {
-  index.value = id
-  visible.value = true
-}
-
-onBeforeMount(async () => {
-  const { data } = await axios.get('https://felss.dev/api/index.php?acao=portfolio')
-  listProjects.value = data
-  imgs.value = data.map((item: Project) => {
-    return {
-      src: 'https://felss.dev/api/img/' + item.img,
-      caption: item.nome,
-    }
-  })
-})
 </script>
 <style lang="scss" scoped>
 @keyframes morph {
@@ -257,9 +276,6 @@ onBeforeMount(async () => {
   to {
     background-position: 150% 150%;
   }
-}
-.bgHeight {
-  min-height: calc(100vh - 85px);
 }
 .ruan {
   position: relative;
@@ -308,13 +324,14 @@ onBeforeMount(async () => {
     font-size: 0.6rem;
   }
 }
-.projects {
-  .thumb {
-    img {
-      width: 100%;
-      height: 100%;
-      max-height: 250px;
-      object-fit: cover;
+.icon {
+  .border-bottom {
+    transition: all 0.5s ease-out;
+    background: var(--color-active);
+  }
+  &:hover {
+    .border-bottom {
+      background: var(--color-blue-active);
     }
   }
 }

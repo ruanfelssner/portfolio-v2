@@ -5,7 +5,7 @@
         <div class="flex items-center">
           <div class="flex-shrink-0">
             <img
-              class="h-12 logo"
+              class="h-12 logo cursor-pointer"
               src="@/assets/logo.png"
               alt="Felss Dev"
               href="javascript:void(0)"
@@ -75,8 +75,6 @@ const navigation = [
   { name: 'Principal', href: '/' },
   { name: 'Sobre', href: '/about' },
   { name: 'Projetos', href: '/projects' },
-  { name: 'Hobbies', href: '/hobbies' },
-  { name: 'Contato', href: '/contact' },
 ]
 
 const pushRoute = (route: string) => {
