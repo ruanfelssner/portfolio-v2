@@ -1,6 +1,6 @@
-# felss
+# Portfolio 2024 Ruan Felssner
 
-This template should help get you started developing with Vue 3 in Vite.
+Portfólio desenvolvido em Vue3 com integração em API linguagem en-US e pt-BR
 
 ## Recommended IDE Setup
 
