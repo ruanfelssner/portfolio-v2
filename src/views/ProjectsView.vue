@@ -3,6 +3,7 @@
     <ProjectPortfolio />
   </div>
 </template>
-<script setup type="ts">
+
+<script setup lang="ts">
 import ProjectPortfolio from '@/components/ProjectPortfolio.vue'
 </script>

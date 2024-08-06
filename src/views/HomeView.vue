@@ -56,7 +56,7 @@
 
             <div class="flex justify-center my-5">
               <RouterLink
-                to="/sobre"
+                to="/about"
                 class="text-center bg-active hover:bg-gray-800 text-gray-800 hover:text-sky-400 font-kanit font-medium mx-auto my-4 py-2 px-4 border border-gray-400 rounded-full shadow"
               >
                 Saiba mais
