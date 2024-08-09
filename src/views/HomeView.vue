@@ -130,72 +130,81 @@ import { TransitionRoot } from '@headlessui/vue'
 
 const listExperience = [
   {
-    cargo: 'Engenheiro de Software Sênior',
+    cargo: 'Desenvolvedor Frontend Sênior',
+    empresa: 'Nt Consult - Fairfax',
+    ano: 'jan/2024 - momento',
+    descricao:
+      'Transformação digital dos seguros Fairfax, construindo boilerplate Nuxt 3 SSR, Design Pattern, Storybook com Webcomponents e etc.',
+    posicao: 'left',
+    icon: 'devicon-devicon-plain',
+  },
+  {
+    cargo: 'Desenvolvedor Frontend Sênior',
     empresa: 'Muvz - Omint Saúde',
-    ano: '2022 - 2024',
+    ano: 'ago/2022 - jan/2024',
     descricao:
       'Trabalhei nos projetos da Omint Saúde desenvolvendo o redesign dos aplicativos principais de associados, Kipp Saude, App Prestadores da Omint, Desenvolvimento de Frontend e seus padrões.',
     posicao: 'right',
     icon: 'devicon-devicon-plain',
   },
   {
-    cargo: 'Tech Lead Sênior',
-    empresa: 'Auzza Capital',
-    ano: '2022 - 2023',
+    cargo: 'Desenvolvedor Fullstack / Tech Lead Sênior',
+    empresa: 'Auzza Capital - Noturno Meio Período',
+    ano: 'mar/2022 - set/2023',
     descricao:
       'Atuando na gestão de equipe de tecnologia, desenvolvimento de produto, regras de negócios e programando em Node.js (Backend) + Mysql e Mongodb + Nuxt.js e Next.js',
     posicao: 'left',
     icon: 'devicon-devicon-plain',
   },
   {
-    cargo: 'Engenheiro de Software Sênior',
+    cargo: 'Desenvolvedor Frontend Sênior',
     empresa: 'Franq Open Bank',
-    ano: '2021 - 2022',
+    ano: 'set/2021 - mar/2022',
     descricao:
       'Trabalho focado no desenvolvimento de frontend ux ui dos produtos de Home Equity, Crédito Imobiliario, Consórcio PJ',
     posicao: 'right',
     icon: 'devicon-devicon-plain',
   },
   {
-    cargo: 'Fullstack Sênior',
+    cargo: 'Desenvolvedor Fullstack / Tech Lead Sênior',
     empresa: 'AMA - Agentes do Meio Ambiente',
-    ano: '2019 - 2021',
+    ano: 'dez/2019 - ago/2021',
     descricao:
-      'Apoiando a todos os setores no desenvolvimento dos produtos de software, desde o desenvolvimento de ferramentas para o mapeamento de microáreas, infraestrutura devops, requisitos de software e com o foco maior no desenvolvimento web de front e back end.',
+      'Apoiando a todos os setores no desenvolvimento dos produtos de software, desde o desenvolvimento de ferramentas IA para o mapeamento de microáreas, infraestrutura devops, requisitos de software e com o foco maior no desenvolvimento web de front e back end.',
     posicao: 'left',
     icon: 'devicon-devicon-plain',
   },
   {
     cargo: 'Fullstack Sênior',
-    empresa: 'Agência Candy',
-    ano: '2013 - 2021',
+    empresa: 'Agência Candy - Noturno Meio periodo',
+    ano: 'mar/2013 - jan/2021',
     descricao:
       'Trabalhando com a parte Administrativa na gestão e com o desenvolvimento desde as partes gráficas como Photoshop, Illustrator, Premiere vetores logos cartões de visitas etc, como parte de front end, estruturação Bootstrap, UX UI, Wordpress, e parte de Programação em PHP, Ajax, Jquery, em sistemas personalizados aplicações de facebook, wireframes, integrações de sistemas e etc.Google analytics, Google Ads, Face Ads, Google Webmaster entre outras aplicações de divulgação e indexação.',
     posicao: 'right',
     icon: 'devicon-devicon-plain',
   },
   {
-    cargo: 'Front End Pleno',
+    cargo: 'Desenvolvedor Front End Pleno',
     empresa: 'Grupo Negócios Públicos',
-    ano: '2019',
+    ano: 'jul/2019 - dez/2019',
     descricao:
       'Trabalhei no desenvolvimento web de seus produtos como ERP, Sollicita, Contract Vision, Compliance GOV, durante todo o período utilizei Sass, Razor do C#.net, participei de todo desenvolvimento do zero de alguns produtos como o Sollicita, Contract Vision, Compliance Criei alguns layouts e marcas do Contract Vision/Compliance, neste trabalho mesmo que o período pequeno as amizades continuam, equipe super enturmada, criamos um um bom vinculo mesmo após a saída.',
     posicao: 'left',
     icon: 'devicon-devicon-plain',
   },
   {
-    cargo: 'Fullstack Pleno',
+    cargo: 'Desenvolvedor Fullstack Pleno',
     empresa: 'Sites 10',
-    ano: '2014-2015',
+    ano: 'set/2014 - set/2015',
     descricao:
       "Exportação de Layouts em psd's para html/css/js e programação dos mesmos em php/mysql, paineis administrativos e gerenciaveis/ criação de ecommerce/ e etc.",
     posicao: 'right',
     icon: 'devicon-devicon-plain',
   },
   {
-    cargo: 'Front End Pleno',
+    cargo: 'Desenvolvedor Front End Pleno',
     empresa: 'Magic Web Design',
-    ano: '2013-2014',
+    ano: 'jun/2013 - ago/2014',
     descricao:
       'Trabalho de atualizações de sites, portais, sistemas. Front end para sites de novos clientes, PSD, Html, Css, Jquery, clientes de grande porte tais como itau, sadia, yamaha etc.',
     posicao: 'left',
